@@ -3,6 +3,55 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<VBox fx:controller="sample.Controller"
+      xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="5">
+    <fx:define>
+        <Font name="Arial White" fx:id="FONT" size="16" />
+    </fx:define>
+    <StackPane>
+        <Rectangle fill="#323232" width="235" height="70"/>
+        <Text fx:id="output" fill="#ffffff" text=""/>
+    </StackPane>
+
+    <HBox alignment="CENTER" spacing="5">
+        <Button text="AC" prefWidth="55" prefHeight="50" font="$FONT" onAction="#acHandler"/>
+        <Button text="+/-" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
+        <Button text="\%" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
+        <Button text="/" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="5">
+        <Button text="7" prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="8" prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="9" prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="x" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="5">
+        <Button text="4" prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="5" prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="6" prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="-" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="5">
+        <Button text="1" prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="2" prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="3" prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="+" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="5">
+        <Button text="0" prefWidth="115" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="." prefWidth="55" prefHeight="50" font="$FONT" onAction="#numButton"/>
+        <Button text="=" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
+
+    </HBox>
+
+</VBox>
