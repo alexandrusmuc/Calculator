@@ -70,4 +70,14 @@ public class Controller {
         output.setText("");
 
     }
+
+    public void negativeHandler(ActionEvent actionEvent) {
+        String s = output.getText();
+        if (s.charAt(0)=='-'){
+            s= s.substring(1);
+            output.setText(s);
+        }else {
+            output.setText("-"+s);
+        }
+    }
 }

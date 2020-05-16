@@ -10,7 +10,7 @@ public class Model {
             case "-":
                 return  value1-value2;
 
-            case "*":
+            case "x":
                 return  value1*value2;
 
             case "/":

@@ -21,7 +21,7 @@
 
     <HBox alignment="CENTER" spacing="5">
         <Button text="AC" prefWidth="55" prefHeight="50" font="$FONT" onAction="#acHandler"/>
-        <Button text="+/-" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
+        <Button text="+/-" prefWidth="55" prefHeight="50" font="$FONT" onAction="#negativeHandler"/>
         <Button text="\%" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
         <Button text="/" prefWidth="55" prefHeight="50" font="$FONT" onAction="#operatorButton"/>
     </HBox>
