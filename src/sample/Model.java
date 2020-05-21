@@ -1,8 +1,8 @@
 package sample;
 
 public class Model {
-    public static long calculate(long value1, long value2, String operator){
-        long result = 0;
+    public static double calculate(double value1, double value2, String operator){
+        double result = 0;
         switch (operator){
             case "+":
                 return   value1+value2;

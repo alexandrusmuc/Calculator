@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public class Controller {
@@ -10,12 +11,12 @@ public class Controller {
     Text output;
     private boolean operatorPressed=false;
     private boolean lastPressedOperator=false;
-
-    private long number1=0;
+    private double number1=0d;
     private boolean number1Flag = false;
     private String operator;
     @FXML
     public void numButton(ActionEvent actionEvent) {
+
         String s = output.getText();
         lastPressedOperator=false;
 
@@ -27,10 +28,6 @@ public class Controller {
             s+=((Button)actionEvent.getSource()).getText();
             output.setText(s);
         }
-
-
-
-        
     }
     @FXML
     public void operatorButton(ActionEvent actionEvent) {
@@ -42,24 +39,25 @@ public class Controller {
         operatorPressed= true;
         String op = ((Button)actionEvent.getSource()).getText();
         if(number1Flag){
-            long number2 = Long.parseLong(output.getText());
-            output.setText(String.valueOf( Model.calculate(number1,number2,operator)));
-            number1=Long.parseLong( output.getText());
+            double number2 = Double.parseDouble(output.getText());
+            Double x = Model.calculate(number1, number2, operator );
+            if(Math.floor(x)== Math.ceil(x)){
+                output.setText(String.valueOf( (((int)Math.floor(x)))));
+            }else
+                output.setText(String.valueOf(x));
+
+            number1=Double.parseDouble( output.getText());
 
             operator=op;
 
         }else{
-            number1 =Long.parseLong( output.getText());
+            number1 =Double.parseDouble( output.getText());
             number1Flag=true;
             operator= op;
 
         }
         lastPressedOperator=true;
        // number1 =Long.parseLong( output.getText());
-
-
-
-
     }
 
     public void acHandler(ActionEvent actionEvent) {
@@ -79,5 +77,9 @@ public class Controller {
         }else {
             output.setText("-"+s);
         }
+    }
+
+    public void percentHandler(ActionEvent actionEvent) {
+
     }
 }
